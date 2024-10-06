@@ -33,13 +33,13 @@ class Department {
     //pushing the employee class in to the employees array 
     }
 
-    get getDepartmentSalary() {
+    getDepartmentSalary() {
         return this.employees.reduce((totalSalary, employee) => totalSalary + employee.salary, 0);
     //using the reduce method to calculate the total salary 
     }
 
-
 //TASK 4 - Handle Bonuses for Managers:
+
     calculateTotalSalaryWithBonus() {
         return this.employees.reduce((totalSalary, emp) => {
             return totalSalary + emp.salary + (emp.bonus ? emp.bonus : 0);
@@ -51,7 +51,7 @@ class Department {
 
 
 
-//TASK 3 - Create a Manager Class that Inherits from Employee
+//TASK 3 - Create a Manager Class that Inherits from Employee:
 
 class Manager extends Employee {
     constructor(name, salary, position, department, bonus) {
@@ -66,5 +66,11 @@ class Manager extends Employee {
     //returning the details from the class
 }
 
-const manager1 = new Manager("Cersi", 120000, "Analyst", "Business", 1000)
+const manager1 = new Manager("Cersei", 120000, "Analyst", "Business", 1000)
 console.log(manager1.getDetails());
+
+
+
+
+
+
