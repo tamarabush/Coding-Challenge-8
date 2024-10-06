@@ -71,6 +71,28 @@ console.log(manager1.getDetails());
 
 
 
+//TASK 5 - Create and Manage Departments and Employees:
 
+//created departments
+const business = new Department("Business");
+const humanResources = new Department("Human Resources");
+
+//created employees
+const robb = new Employee("Robb", 150000, "Developer", "Business");
+const daenerys = new Employee("Daenerys", 95000, "Designer", "Human Resources");
+const cersei = new Manager("Cersei", 110000, "Business Manager", "Business", 20000);
+const jamie = new Manager("Jaime", 120000, "Human Resources Manager", "Human Resources", 25000);
+
+//added employees to departments
+business.addEmployees(robb);
+business.addEmployees(daenerys);
+humanResources.addEmployees(cersei);
+humanResources.addEmployees(jamie);
+
+//calculated total salary for each department
+console.log(`Total salary for Engineering: $${business.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Engineering: $${business.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary for Marketing: $${humanResources.getDepartmentSalary()}`);
+console.log(`Total salary with bonuses for Marketing: $${humanResources.calculateTotalSalaryWithBonus()}`);
 
 
