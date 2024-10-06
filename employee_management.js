@@ -37,6 +37,16 @@ class Department {
         return this.employees.reduce((totalSalary, employee) => totalSalary + employee.salary, 0);
     //using the reduce method to calculate the total salary 
     }
+
+
+//TASK 4 - Handle Bonuses for Managers:
+    calculateTotalSalaryWithBonus() {
+        return this.employees.reduce((totalSalary, emp) => {
+            return totalSalary + emp.salary + (emp.bonus ? emp.bonus : 0);
+        }, 0);
+    }
+    //created a method that calculates the total salary with bonuses
+    
 }
 
 
