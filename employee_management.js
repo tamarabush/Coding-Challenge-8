@@ -11,18 +11,17 @@ class Employee {
 
     getDetails() {
         return (`${this.name} is a ${this.position}, who is earning $${this.salary} per year.`);
-    //using the get method to 'get' the data properties from the class employee
     }
 } 
 
-const employee1 = new Employee("Robb Stark", 175000, "Westeros King");
+const employee1 = new Employee("Robb Stark", 175000, "Designer");
 console.log(employee1.getDetails()); 
 
 
 
 //TASK 2 - Create a Department Class:
 
-class department {
+class Department {
     constructor(name) {
         this.name = name
         this.employees = []
@@ -39,3 +38,23 @@ class department {
     //using the reduce method to calculate the total salary 
     }
 }
+
+
+
+//TASK 3 - Create a Manager Class that Inherits from Employee
+
+class Manager extends Employee {
+    constructor(name, salary, position, department, bonus) {
+        super(name, salary, position, department);
+        this.bonus = bonus; 
+    //created manager class that inherits the employee class, then added the bonus property 
+    }
+
+    getDetails() {
+        return (`Name: ${this.name} Salary: $${this.salary} Position: ${this.position} Department: ${this.department} Bonus: $${this.bonus}`);
+    }
+    //returning the details from the class
+}
+
+const manager1 = new Manager("Cersi", 120000, "Analyst", "Business", 1000)
+console.log(manager1.getDetails());
